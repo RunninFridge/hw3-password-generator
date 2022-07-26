@@ -44,7 +44,7 @@ function generatePassword() {
         charNumber = confirm("Do you wanna use numbers?");
         charSpecial = confirm("Do you wanna use special Characters?");
         charUpper = confirm("Do you wanna use Upper Case letters?");
-        charLower = confirm("do you wanna use Lower Case letters?");
+        charLower = confirm("Do you wanna use Lower Case letters?");
     };
     // Prompts a user if nothing was selected
     if (!charSpecial && !charNumber && !charUpper && !charLower) {
