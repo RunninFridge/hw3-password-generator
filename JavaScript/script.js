@@ -21,13 +21,13 @@ var toUpper = function (x) {
     return x.toUpperCase();
 };
 // creates a variable for uppercase conversion
-charUpper = lowerchars.map(toUpper);
+Upper = lowerchars.map(toUpper);
 
 var get = document.querySelector("#generate");
 
 get.addEventListener("click", function () {
     ps = generatePassword();
-    document.getElementById("password").placeholder = ps;
+    document.getElementById("password").placeholder = pg;
 });
 
 // Start function to generate password
@@ -54,39 +54,39 @@ function generatePassword() {
     // Confirmation of all 4 promts
     else if (charSpecial && charNumber && charUpper && charLower) {
 
-        choices = character.concat(number, charLower, charUpper);
+        choices = character.concat(number, lowerchars, Upper);
     }
     // If only 3 promts where selected
     else if (charSpecial && charNumber && charUpper) {
-        choices = character.concat(number, charUpper);
+        choices = character.concat(number, Upper);
     }
     else if (charSpecial && charNumber && charLower) {
-        choices = character.concat(number, charLower);
+        choices = character.concat(number, lowerchars);
     }
     else if (charSpecial && charLower && charUpper) {
-        choices = character.concat(charLower, charUpper);
+        choices = character.concat(lowerchars, Upper);
     }
     else if (charNumber && charLower && charUpper) {
-        choices = number.concat(charLower, charUpper);
+        choices = number.concat(lowerchars, Upper);
     }
     // If only 2 prompts where selected 
     else if (charSpecial && charNumber) {
         choices = character.concat(number);
 
     } else if (charSpecial && charLower) {
-        choices = character.concat(charLower);
+        choices = character.concat(lowerchars);
 
     } else if (charSpecial && charUpper) {
-        choices = character.concat(charUpper);
+        choices = character.concat(Upper);
     }
     else if (charLower && charNumber) {
-        choices = charLower.concat(number);
+        choices = lowerchars.concat(number);
 
     } else if (charLower && charUpper) {
-        choices = charLower.concat(charUpper);
+        choices = lowerchars.concat(Upper);
 
     } else if (charNumber && charUpper) {
-        choices = number.concat(charUpper);
+        choices = number.concat(Upper);
     }
     // If only 1 prompt was selected
     else if (charSpecial) {
@@ -96,11 +96,11 @@ function generatePassword() {
         choices = number;
     }
     else if (charLower) {
-        choices = charLower;
+        choices = lowerchars;
     }
     // Created space variable to fill uppercase conversion
     else if (charUpper) {
-        choices = space.concat(charUpper);
+        choices = space.concat(Upper);
     };
     var password = [];
 
@@ -109,12 +109,12 @@ function generatePassword() {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(pickChoices);
     }
-    var ps = password.join("");
-    UserInput(ps);
-    return ps;
+    var pg = password.join("");
+    UserInput(pg);
+    return pg;
 }
 // This puts the password value into the textbox
-function UserInput(ps) {
-    document.getElementById("password").textContent = ps;
+function UserInput(pg) {
+    document.getElementById("password").textContent = pg;
 
 }
